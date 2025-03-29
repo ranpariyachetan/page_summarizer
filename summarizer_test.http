@@ -1,0 +1,6 @@
+POST http://127.0.0.1:5000/summarize
+Content-Type: application/json
+
+{
+  "page_url": "https://scikit-learn.org/dev/modules/generated/sklearn.metrics.ConfusionMatrixDisplay.html"
+}
