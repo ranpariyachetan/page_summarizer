@@ -1,4 +1,5 @@
 from flask import Flask, jsonify, request
+from flask_cors import cross_origin
 import webpage_summarizer
 app = Flask(__name__)
 
@@ -10,6 +11,7 @@ def home():
 
 
 @app.route("/summarize", methods=["POST"])
+@cross_origin(allow_headers=["Content-Type"])
 def summarize():
     page_url = request.json["page_url"]
     page_summary = webpage_summarizer.summarize_webpage(page_url)
